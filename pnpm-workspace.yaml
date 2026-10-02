@@ -1,0 +1,10 @@
+packages:
+  - .
+
+# Dependency installation policy.
+autoInstallPeers: false
+blockExoticSubdeps: true
+ignoreScripts: true
+minimumReleaseAge: 2880
+strictDepBuilds: true
+trustPolicy: no-downgrade

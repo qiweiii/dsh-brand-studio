@@ -1,0 +1,88 @@
+export const NS = "dsh.brand-studio";
+export const en = {
+  nav: "Branding",
+  heading: "Branding",
+  pageTitle: "Page title",
+  intro: "Personalize the brand inside this app. Your choices stay on this device and address.",
+  brandLabel: "Brand label",
+  nameMode: "Display as",
+  textMode: "Text",
+  imageMode: "Image",
+  wordmarkHint:
+    "Replaces the brand text, not the logo. Text is kept for switching back and page titles.",
+  logoSize: "Sidebar logo size",
+  logoRadius: "Logo corner radius",
+  logoHint:
+    "The same logo appears in new chats, scaled to fit that area. Size and rounding are based on the sidebar logo.",
+  name: "Brand name",
+  nameHint: "Leave empty to use the official name.",
+  badge: "Badge text",
+  badgeHint: "Leave empty to hide.",
+  logo: "Logo",
+  wordmark: "Brand text image",
+  imageHint: "PNG / JPEG / static WebP · up to 5 MB",
+  choose: "Choose image",
+  reset: "Reset",
+  resetAll: "Reset all",
+  title: "Use brand name (keep session name)",
+  titleHint: "Keeps the current session name. Desktop window titles follow where supported.",
+  preview: "Preview",
+  official: "Official branding",
+  apply: "Apply",
+  cancel: "Cancel",
+  saved: "Branding saved.",
+  processing: "Preparing image…",
+  storageError:
+    "Could not save. Browser storage may be unavailable or full. Your previous branding is unchanged.",
+  conflict:
+    "Branding changed in another tab. Cancel to load the latest settings before editing again.",
+  "image-format":
+    "Choose a PNG, JPEG or non-animated WebP image. SVG and animated images are not supported.",
+  "image-size": "The image is too large. Choose a file up to 5 MB.",
+  "image-dimensions": "The image exceeds 16 megapixels. Choose a smaller image.",
+  "image-invalid": "This image could not be read. Try a different file.",
+};
+export const zh: typeof en = {
+  nav: "品牌",
+  heading: "品牌",
+  pageTitle: "页面标题",
+  intro: "自定义应用内的品牌展示。设置仅保存在当前设备和访问地址中。",
+  brandLabel: "品牌文字区域",
+  nameMode: "显示方式",
+  textMode: "文字",
+  imageMode: "图片",
+  wordmarkHint: "替换品牌文字，不是 logo。原文字保留，便于切回文字模式和设置页面标题。",
+  logoSize: "侧边栏 logo 大小",
+  logoRadius: "Logo 圆角",
+  logoHint: "同一张 logo 也会显示在新会话中，并按该区域缩放。大小和圆角以侧边栏 logo 为基准。",
+  name: "品牌名称",
+  nameHint: "留空使用官方名称。",
+  badge: "徽章文字",
+  badgeHint: "留空隐藏徽章。",
+  logo: "Logo",
+  wordmark: "品牌文字图片",
+  imageHint: "PNG / JPEG / 静态 WebP · 不超过 5 MB",
+  choose: "选择图片",
+  reset: "重置",
+  resetAll: "全部重置",
+  title: "使用品牌名称（保留会话名称）",
+  titleHint: "保留当前会话名称。桌面应用允许时，窗口标题也会跟随。",
+  preview: "预览",
+  official: "官方品牌",
+  apply: "应用",
+  cancel: "取消",
+  saved: "品牌设置已保存。",
+  processing: "正在处理图片…",
+  storageError: "无法保存，浏览器存储可能不可用或已满。原有品牌设置未改变。",
+  conflict: "其他标签页修改了品牌设置。请先取消，载入最新设置后再编辑。",
+  "image-format": "请选择 PNG、JPEG 或静态 WebP 图片，不支持 SVG 和动态图。",
+  "image-size": "图片过大，请选择不超过 5 MB 的文件。",
+  "image-dimensions": "图片超过 1600 万像素，请使用更小的图片。",
+  "image-invalid": "无法读取这张图片，请尝试其他文件。",
+};
+export type BrandKey = keyof typeof en;
+declare module "@deepseek-ai/dsh-client-ui-slots" {
+  interface LocaleNamespaceMap {
+    "dsh.brand-studio": BrandKey;
+  }
+}
