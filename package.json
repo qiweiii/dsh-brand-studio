@@ -43,6 +43,7 @@
     }
   },
   "scripts": {
+    "prepare": "git config --local core.hooksPath .githooks",
     "build": "tsdown",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test tests/*.test.ts tests/release.test.mjs",

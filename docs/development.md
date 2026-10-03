@@ -38,6 +38,7 @@ When deliberately changing dependencies, first resolve them with `pnpm install -
 ## Checks and build
 
 ```sh
+pnpm prepare
 pnpm typecheck
 pnpm check
 pnpm test
@@ -65,6 +66,6 @@ Desktop uses a separate profile. Its current installation flow rejects the local
 
 ## Distribution
 
-Commit reviewed `lib/` artifacts with a release so GitHub installations do not require a build. There are no `prepare`, `postinstall`, or automatic compilation hooks. Update the artifacts after source changes, and record the DSH release actually verified.
+Commit reviewed `lib/` artifacts with a release so GitHub installations do not require a build. The `prepare` script only configures local Git hooks; there are no `postinstall` or automatic compilation hooks. Update the artifacts after source changes, and record the DSH release actually verified.
 
 GitHub installation and npm publication use the same package. See [release setup](release.md) for automatic betas, manual stable releases, and npm trusted publishing. Review the package contents before publishing.

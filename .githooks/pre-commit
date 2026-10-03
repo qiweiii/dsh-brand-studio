@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+if [ ! -x node_modules/.bin/biome ]; then
+  echo 'Pre-commit: install the reviewed development dependencies before committing.' >&2
+  exit 1
+fi
+
+exec node_modules/.bin/biome check --staged --no-errors-on-unmatched

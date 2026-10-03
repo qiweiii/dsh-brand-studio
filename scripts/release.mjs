@@ -105,7 +105,8 @@ function prepare() {
     delete pkg.private;
     writeFileSync("package.json", `${JSON.stringify(pkg, null, 2)}\n`);
     const packed = parsePackOutput(
-      command("npm", ["pack", "--json", "--ignore-scripts", "--pack-destination", DIRECTORY]).stdout,
+      command("npm", ["pack", "--json", "--ignore-scripts", "--pack-destination", DIRECTORY])
+        .stdout,
       pkg.name,
       version,
     );
@@ -147,7 +148,9 @@ function publish() {
   );
   if (existing.status === 0) {
     if (JSON.parse(existing.stdout) !== metadata.integrity) {
-      throw new Error("This npm version already contains a different tarball; choose a new version.");
+      throw new Error(
+        "This npm version already contains a different tarball; choose a new version.",
+      );
     }
     console.log("Identical npm version already published; continuing the release.");
     return;
