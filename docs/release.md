@@ -39,7 +39,7 @@ RELEASE_CHANNEL=beta RELEASE_NUMBER=0 node scripts/release.mjs prepare
 npm publish .local/release/dsh-brand-studio-0.0.1-beta.0.tgz --tag beta --access public --ignore-scripts
 ```
 
-The example uses the current `0.0.1` base version. If it has changed, use the tarball path printed by `prepare`. This reserves the package under your npm account without declaring the first build stable. Then configure trusted publishing and enable releases as described above.
+The example uses a `0.0.1` base version. If your version differs, use the tarball path printed by `prepare`. This reserves the package under your npm account without declaring the first build stable. Then configure trusted publishing and enable releases as described above.
 
 After the first successful Actions publication, npm recommends **Publishing access → Require two-factor authentication and disallow tokens**. Trusted publishing continues to work with that setting. [npm publishing-access guidance](https://docs.npmjs.com/trusted-publishers/).
 

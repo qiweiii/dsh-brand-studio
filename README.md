@@ -89,6 +89,4 @@ dsh plugin --profile web add 'github:qiweiii/dsh-brand-studio'
 
 在桌面端或网页/PWA 打开**插件**页面，找到 **DSH Brand Studio**，点击**卸载**并确认。如果只是暂时不用，可以选择禁用。
 
-开发和发布：[开发指南](docs/development.md) · [发布指南](docs/release.md)。
-
 本项目为独立社区项目，与 DeepSeek 官方无关联。

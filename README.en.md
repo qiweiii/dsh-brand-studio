@@ -89,6 +89,4 @@ For an existing installation, you can rename its desktop shortcut and select an 
 
 In Desktop or Web/PWA, open **Plugins**, find **DSH Brand Studio**, choose **Uninstall**, and confirm. To temporarily stop using it, disable it instead.
 
-Development and publishing: [Development](docs/development.md) · [Releases](docs/release.md).
-
 This is an independent community project, not affiliated with DeepSeek.

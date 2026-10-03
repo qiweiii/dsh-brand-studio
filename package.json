@@ -1,6 +1,6 @@
 {
   "name": "dsh-brand-studio",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Customizable in-app branding for DeepSeek Harness Web, PWA, and Desktop.",
   "repository": {
     "type": "git",
