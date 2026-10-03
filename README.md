@@ -1,26 +1,26 @@
 # DSH Brand Studio
 
-**English** · [简体中文](README.zh-CN.md)
+**简体中文** · [English](README.en.md)
 
-A small community plugin for personalizing the branding inside **DeepSeek Harness Web, its PWA, and the desktop app's shared Web UI**, with a dedicated settings panel.
+一个小型社区插件，通过独立设置面板，自定义 **DeepSeek Harness 网页、PWA，以及桌面应用内共用的 Web 界面**中的品牌展示。
 
-Customize the brand name and badge, choose local logo and wordmark images, preview your changes, and optionally use your brand name in browser titles. Reset restores the official appearance. Desktop window titles follow the shared document title where the shell permits it. Settings stay on the current device and address; they are not synchronized between Web, Desktop, or your phone. Sidebar and new-chat logos use DSH's official UI slots.
+支持自定义品牌名称和徽章、本地 logo 和字标图片、即时预览、可选的浏览器标题自定义，以及恢复官方外观。桌面应用允许时，窗口标题也会跟随共用网页的标题。配置仅保存在当前设备和访问地址中，不会在网页、桌面端和手机之间同步。侧边栏品牌和新会话 logo 使用 DSH 官方 UI 插槽。
 
-This project targets in-app branding. It does not change installed application names, operating-system icons, native desktop menus, or the desktop welcome screen. It is not a theme or character-skin manager.
+本项目针对应用内的品牌区域，不更改已安装应用的名称、系统图标、桌面应用原生菜单或独立欢迎界面。本插件也不是主题或角色皮肤管理器。
 
-## Installation
+## 安装
 
-In **Desktop**, open the app's **Plugins → Add plugin** dialog. In **Web/PWA**, open the same dialog in the Web interface. Choose either source below.
+**桌面端**：在应用内打开**插件 → 添加插件**。**网页/PWA**：在网页界面打开同一入口。任选以下一种来源安装。
 
 ### npm
 
-Enter this package name:
+输入包名：
 
 ```text
 dsh-brand-studio
 ```
 
-For Web/PWA, you can also install from the terminal:
+网页/PWA 也可以通过命令行安装：
 
 ```sh
 dsh plugin --profile web add dsh-brand-studio
@@ -28,36 +28,36 @@ dsh plugin --profile web add dsh-brand-studio
 
 ### GitHub
 
-Alternatively, enter this repository address:
+也可以输入仓库地址：
 
 ```text
 github:qiweiii/dsh-brand-studio
 ```
 
-For Web/PWA:
+网页/PWA 的命令行安装方式：
 
 ```sh
 dsh plugin --profile web add 'github:qiweiii/dsh-brand-studio'
 ```
 
-After installation, fully quit and reopen **Desktop**, or restart the **Web server** and reload your browser/PWA. Then open **Settings → Branding**.
+安装后，**桌面端**完全退出再重新打开；**网页/PWA**重启网页服务并刷新页面。随后进入**设置 → 品牌**。
 
-Desktop and Web use separate profiles; install in each interface you want to customize. A PWA uses its Web server's plugins and needs no separate installation. Manage Desktop plugins through the app's Plugins page; the regular CLI commands above target Web only.
+桌面端和网页使用独立 profile，需要分别安装。PWA 使用所在网页服务的插件，无需单独安装。桌面端插件请通过应用内的插件页面管理；上面的常规 CLI 命令仅用于网页 profile。
 
-## Usage
+## 使用
 
-Open **Settings → Branding**, edit the name or badge, and choose your images. **Apply** saves the preview; **Cancel** discards pending changes. An empty name restores the official name, and an empty badge hides the badge. **Reset all**, followed by **Apply**, restores all defaults.
+进入**设置 → 品牌**，修改名称、徽章或选择图片。**应用**保存预览中的修改，**取消**放弃尚未保存的修改。名称留空恢复官方名称，徽章留空则隐藏徽章。点击**全部重置**后，再点击**应用**恢复所有默认设置。
 
-Images are processed locally: PNG, JPEG, and static WebP up to 5 MB and 16 megapixels are accepted, then resized to at most 512 pixels per edge. SVG and animated images are rejected. Images and settings are never uploaded by this plugin.
+图片在本地处理：支持不超过 5 MB、1600 万像素的 PNG、JPEG 和静态 WebP，并缩放至每边最多 512 像素。不支持 SVG 和动态图。本插件不会上传图片或配置。
 
-The brand label has **Text / Image** modes; switching modes preserves both choices. The logo also appears in the new-chat view, with adjustable size and rounding.
+品牌文字区域提供**文字 / 图片**两种模式，切换时保留原有内容。Logo 同时显示在新会话中，可调整大小和圆角。
 
-Page-title customization is enabled by default for new settings and preserves the current session name. Existing saved choices are kept; you can turn it off. Disable other branding/title plugins if they compete for the same area.
+新配置默认开启页面标题自定义，保留当前会话名称，也可以关闭。已有配置会保留原来的选择。如果其他品牌或标题插件修改同一区域，请先停用它们。
 
-### Remove
+### 卸载
 
-In Desktop or Web/PWA, open **Plugins**, find **DSH Brand Studio**, choose **Uninstall**, and confirm. To temporarily stop using it, disable it instead.
+在桌面端或网页/PWA 打开**插件**页面，找到 **DSH Brand Studio**，点击**卸载**并确认。如果只是暂时不用，可以选择禁用。
 
-Development and publishing: [Development](docs/development.md) · [Releases](docs/release.md).
+开发和发布：[开发指南](docs/development.md) · [发布指南](docs/release.md)。
 
-This is an independent community project, not affiliated with DeepSeek.
+本项目为独立社区项目，与 DeepSeek 官方无关联。

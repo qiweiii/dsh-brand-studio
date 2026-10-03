@@ -12,7 +12,7 @@ const FILES = [
   "package.json",
   "cordis.patch.yml",
   "README.md",
-  "README.zh-CN.md",
+  "README.en.md",
   "lib/index.js",
   "lib/client.js",
   "lib/client.js.map",
@@ -37,6 +37,27 @@ export function checkPackageFiles(files) {
   if (JSON.stringify(paths) !== JSON.stringify([...FILES].sort())) {
     throw new Error(`Unexpected package contents: ${paths.join(", ")}`);
   }
+}
+
+export function parsePackOutput(output, name, version) {
+  const parsed = JSON.parse(output);
+  const packages = Array.isArray(parsed)
+    ? parsed
+    : parsed && typeof parsed === "object"
+      ? Object.values(parsed)
+      : [];
+  const packed = packages[0];
+  if (
+    packages.length !== 1 ||
+    packed?.name !== name ||
+    packed.version !== version ||
+    packed.filename !== `${name}-${version}.tgz` ||
+    !Array.isArray(packed.files)
+  ) {
+    throw new Error("Unexpected npm pack output: expected exactly one matching package.");
+  }
+  checkPackageFiles(packed.files);
+  return packed;
 }
 
 function command(binary, args, allowFailure = false) {
@@ -83,10 +104,11 @@ function prepare() {
     pkg.version = version;
     delete pkg.private;
     writeFileSync("package.json", `${JSON.stringify(pkg, null, 2)}\n`);
-    const [packed] = JSON.parse(
+    const packed = parsePackOutput(
       command("npm", ["pack", "--json", "--ignore-scripts", "--pack-destination", DIRECTORY]).stdout,
+      pkg.name,
+      version,
     );
-    checkPackageFiles(packed.files);
     const tarball = join(DIRECTORY, packed.filename);
     const metadata = {
       name: pkg.name,
