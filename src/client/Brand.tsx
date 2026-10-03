@@ -79,7 +79,9 @@ export function BrandLabel({ settings }: { settings: BrandSettings }) {
         (badge === "HARNESS" ? (
           <OfficialArtwork part="badge" />
         ) : (
-          <span className="dbs-badge">{badge}</span>
+          <span className="dbs-badge">
+            <span className="dbs-badge-text">{badge}</span>
+          </span>
         ))}
     </span>
   );

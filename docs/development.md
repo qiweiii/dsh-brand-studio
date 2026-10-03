@@ -67,4 +67,4 @@ Desktop uses a separate profile. Its current installation flow rejects the local
 
 Commit reviewed `lib/` artifacts with a release so GitHub installations do not require a build. There are no `prepare`, `postinstall`, or automatic compilation hooks. Update the artifacts after source changes, and record the DSH release actually verified.
 
-GitHub installation and npm publication use the same package. Remove `private: true` when preparing an npm release, and review the package contents before publishing.
+GitHub installation and npm publication use the same package. See [release setup](release.md) for automatic betas, manual stable releases, and npm trusted publishing. Review the package contents before publishing.

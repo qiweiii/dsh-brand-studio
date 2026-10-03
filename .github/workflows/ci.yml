@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 12.5.1
+          run_install: false
+      - name: Install the pinned development dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Audit dependencies
+        run: pnpm audit --audit-level=high
+      - name: Check code and behavior
+        run: |
+          pnpm typecheck
+          pnpm check
+          pnpm test
+      - name: Verify the committed plugin bundles
+        run: |
+          pnpm build
+          pnpm test:bundle
+          git diff --exit-code -- lib/
