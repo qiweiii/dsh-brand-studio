@@ -8,3 +8,7 @@ ignoreScripts: true
 minimumReleaseAge: 2880
 strictDepBuilds: true
 trustPolicy: no-downgrade
+
+# Use a provenance-bearing release of Node's fetch API declarations.
+overrides:
+  '@types/node>undici-types': 6.29.0
