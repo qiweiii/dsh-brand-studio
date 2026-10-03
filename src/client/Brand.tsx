@@ -33,7 +33,14 @@ export function LogoImage({
       src={settings.logo}
       width={edge}
       height={edge}
-      style={{ width: edge, height: edge, borderRadius: (size * settings.logoRadius) / 24 }}
+      style={{
+        width: edge,
+        height: edge,
+        borderRadius: (size * settings.logoRadius) / 24,
+        // The host's hero class uses overflow: visible for its animated SVG.
+        // Uploaded images need clipping for rounded corners in Electron.
+        overflow: "hidden",
+      }}
       alt={settings.name ?? "Logo"}
       draggable={false}
     />
