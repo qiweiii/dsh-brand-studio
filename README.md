@@ -1,5 +1,10 @@
 # DSH Brand Studio
 
+[![npm 版本](https://img.shields.io/npm/v/dsh-brand-studio)](https://www.npmjs.com/package/dsh-brand-studio)
+[![npm 下载量](https://img.shields.io/npm/dm/dsh-brand-studio)](https://www.npmjs.com/package/dsh-brand-studio)
+[![node 版本](https://img.shields.io/node/v/dsh-brand-studio)](https://www.npmjs.com/package/dsh-brand-studio)
+[![构建状态](https://img.shields.io/github/actions/workflow/status/qiweiii/dsh-brand-studio/ci.yml?label=build)](https://github.com/qiweiii/dsh-brand-studio/actions)
+
 **简体中文** · [English](README.en.md)
 
 一个小型社区插件，通过独立设置面板，自定义 **DeepSeek Harness 网页、PWA，以及桌面应用内共用的 Web 界面**中的品牌展示。

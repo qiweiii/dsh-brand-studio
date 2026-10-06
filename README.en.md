@@ -1,5 +1,10 @@
 # DSH Brand Studio
 
+[![npm version](https://img.shields.io/npm/v/dsh-brand-studio)](https://www.npmjs.com/package/dsh-brand-studio)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-brand-studio)](https://www.npmjs.com/package/dsh-brand-studio)
+[![node](https://img.shields.io/node/v/dsh-brand-studio)](https://www.npmjs.com/package/dsh-brand-studio)
+[![build](https://img.shields.io/github/actions/workflow/status/qiweiii/dsh-brand-studio/ci.yml?label=build)](https://github.com/qiweiii/dsh-brand-studio/actions)
+
 [简体中文](https://github.com/qiweiii/dsh-brand-studio#readme) · **English**
 
 A small community plugin for personalizing the branding inside **DeepSeek Harness Web, its PWA, and the desktop app's shared Web UI**, with a dedicated settings panel.
