@@ -6,7 +6,7 @@ export interface BrandSourceProps {
   useSettings: SnapshotSelectorHook<BrandSettings>;
 }
 
-/** Verified against the DSH 0.2.0-rc.2 conversation package; no runtime import needed. */
+/** no runtime import needed. */
 declare module "@deepseek-ai/dsh-client-ui-slots" {
   interface SlotMap {
     "conversation.hero.brand.mark": {

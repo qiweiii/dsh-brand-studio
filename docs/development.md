@@ -1,10 +1,10 @@
 # Development
 
-Use **pnpm 12.5.1** and Node **22.18+ on the 22.x line**, or **24.11+**. Run commands from this repository.
+Use the pnpm version specified by `packageManager` and a Node version supported by `engines` in `package.json`. Run commands from this repository.
 
 ## Dependencies
 
-There are no regular runtime dependencies. DSH supplies React and its client services; our client bundle imports the host's React instance. The pinned DSH **0.2.0-rc.2** frontend embeds React/React DOM **18.3.1**, so the development React version matches it. Adopt new React APIs only when the supported host does.
+There are no regular runtime dependencies. DSH supplies React and its client services; our client bundle imports the host's React instance. Keep the development React version aligned with supported DSH hosts. Adopt new React APIs only when the supported hosts provide them.
 
 Development tools are TypeScript, tsdown, and Biome, plus the pinned Cordis/DSH contracts. Installing this repository does not install the complete DSH application or need an upstream checkout. `autoInstallPeers: false` prevents the optional application peer from being installed automatically.
 
