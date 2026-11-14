@@ -66,6 +66,8 @@ Desktop uses a separate profile. Its current installation flow rejects the local
 
 ## Distribution
 
+Verified against DSH `0.2.2-rc.3`: TypeScript, lint, 14 unit tests, build, and the slot/lifecycle bundle test pass with the pinned client contracts. No plugin logic changes were needed; the existing DSH and Cordis peer ranges cover this host. The DSH CLI also passed a Web startup/shutdown smoke check on macOS with Node 24.22.3 and global pnpm 12.16.1 using a per-install virtual store. These checks do not establish visual or Desktop compatibility.
+
 Commit reviewed `lib/` artifacts with a release so GitHub installations do not require a build. The `prepare` script only configures local Git hooks; there are no `postinstall` or automatic compilation hooks. Update the artifacts after source changes, and record the DSH release actually verified.
 
 GitHub installation and npm publication use the same package. See [release setup](release.md) for automatic betas, manual stable releases, and npm trusted publishing. Review the package contents before publishing.
