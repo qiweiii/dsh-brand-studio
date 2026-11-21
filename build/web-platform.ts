@@ -1,4 +1,4 @@
-/** Host module IDs: imports and bundle contract verified against DSH 0.2.2-rc.3. */
+/** Host module IDs: imports and bundle contract verified against DSH 0.2.2-rc.5. */
 export const CLIENT_EXTERNALS = [
   "react",
   "react/jsx-runtime",
